@@ -5,8 +5,8 @@ export default class Conexao {
     private readonly _conexao = mysql2.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '123456789#ChUcHuBeLeZa0',
-        database: 'mydb'
+        password: 'root',
+        database: 'nivel_de_agua_e_luminosidade'
     });
     
     private constructor () {};

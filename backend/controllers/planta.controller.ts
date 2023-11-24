@@ -19,9 +19,23 @@ async function registraStatus (req: Request, res: Response) {
 
 async function listaRegistros (req: Request, res: Response) {
     const { id } = req.params;
-    const registros = plantaModel.listaRegistros(parseInt(id));
+    const registros = await plantaModel.listaRegistros(parseInt(id));
     
     return res.json(registros);
 }
 
-export default { listaTodasPlantas, registraStatus, listaRegistros }
+async function adiciona (req: Request, res: Response) {
+    const { tipo } = req.body;
+    const planta = await plantaModel.adiciona(tipo);
+
+    return res.json(planta);
+}
+
+async function remove (req: Request, res: Response) {
+    const { id } = req.params;
+    const planta = await plantaModel.remove(parseInt(id));
+
+    return res.json(planta);
+}
+
+export default { listaTodasPlantas, registraStatus, listaRegistros, adiciona, remove }

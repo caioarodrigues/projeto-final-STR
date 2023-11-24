@@ -1,5 +1,6 @@
 import Conexao from "../classes/Conexao";
 import { PlantaType } from "../types/Planta.type";
+import { TipoPlanta } from "../types/TipoPlanta.type";
 
 export default class Planta {
     private static readonly _instancia = new Planta();
@@ -23,17 +24,25 @@ export default class Planta {
         await conn.query(q2);
     }
     public async isBancoVazio () {
-        const q = "SELECT COUNT(*)AS qde_plantas FROM plantas";
+        const q = "SELECT COUNT(*) AS qde_plantas FROM plantas";
         const conn = await this._conexao.get();
         const [quantidade] = await conn.query(q); 
 
         return quantidade;
     }
-    public async adiciona () {
+    public async adiciona (tipoPlanta: TipoPlanta) {
+        const conn = await this._conexao.get();
+        const q = "INSERT INTO plantas (tipo) VALUES (?)"
+        const planta = await conn.query(q, tipoPlanta);
 
+        return planta;
     }
-    public async remove () {
+    public async remove (id: number) {
+        const conn = await this._conexao.get();
+        const q = "DELETE FROM plantas WHERE id = ?";
+        const planta = await conn.query(q, id);
 
+        return planta;
     }
     public async registraStatus (planta: PlantaType) {
         const conn = await this._conexao.get();
@@ -56,8 +65,9 @@ export default class Planta {
         const conn = await this._conexao.get();
 
         //aplicação quebrando aqui
-        const [registros] = await conn.query(`SELECT * from from luminosidade;`);
-    
+        const [registros] = await conn.query(`SELECT * from luminosidade WHERE plantas_id = ?;`,
+            id);
+
         return registros;
     }
 }
