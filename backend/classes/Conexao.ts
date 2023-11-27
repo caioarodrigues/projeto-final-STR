@@ -6,7 +6,7 @@ export default class Conexao {
         host: 'localhost',
         user: 'root',
         password: 'root',
-        database: 'nivel_de_agua_e_luminosidade'
+        database: 'registros_plantas'
     });
     
     private constructor () {};
