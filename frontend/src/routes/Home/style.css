@@ -2,4 +2,37 @@ a {
     text-decoration: none;
     font-size: larger;
     font-weight: bolder;
+    color: white;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.body > h3 {
+    margin-block: 1em;
+}
+
+.lista-opcoes {
+    background-color: beige;
+    width: max-content;
+    padding: 1em;
+    border-radius: .25em;
+}
+
+.lista-opcoes li {
+    background-color: red;
+    padding: .25em;
+    margin: .5em;
+    border-radius: .5em;
+    text-align: center;
+    list-style: none;
+    border: solid 1px black;
+}
+
+.lista-opcoes li:hover {
+    transition: .5s ease;
+    background-color: cadetblue;
 }

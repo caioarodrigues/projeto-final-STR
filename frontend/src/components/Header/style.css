@@ -1,0 +1,8 @@
+.header {
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.header h1, .header h2 {
+    height: fit-content;
+}
