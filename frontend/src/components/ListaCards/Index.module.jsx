@@ -1,6 +1,7 @@
 import "./style.css";
 import Card from "../Card/Index.module";
 import { useEffect, useState } from "react";
+import CarregaInformacao from "../CarregaInformacao/Index.module";
 
 export default function ListaCards () {
     const [plantas, setPlantas] = useState([]);
@@ -19,7 +20,18 @@ export default function ListaCards () {
     
     return (
         <>
-            {plantas.map(({ id, tipo }, key) => <Card id={id} tipo={tipo} key={key}/> )}
+            {
+                plantas.length > 0 ? 
+                    plantas.map(({ id, tipo }, key) => {
+                        return (
+                            <>
+                                <Card id={id} tipo={tipo} key={key}/>
+                                <CarregaInformacao idRegistro={id}/>
+                            </>
+                        )
+                    })
+                    : <p>Carregando os dados das plantas...</p>
+            }
         </>
     )
 }

@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ListaCards from './components/ListaCards/Index.module'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Home from './components/Home/Index.module'; './components/Home/Index.module';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <ListaCards />
-    </>
-  )
-}
+    <div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </div>
+  );
+};
 
-export default App
+export default App;
