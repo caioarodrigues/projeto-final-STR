@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    margin-top: 1em;
+    background-color: palegoldenrod;
+    padding: 2em;
+    border-radius: .5em;
+}
+
+.section-form {
+    display: flex;
+    justify-content: center;
+}
+
+.label, .input {
+    height: 1.75em;
+}
+
+.label {
+    
+}
+
+.input {
+    outline: none;
+}
+
+.btn-enviar {
+    width: fit-content;
+}
+
+.div-dados-inseridos {
+    display: flex;
+    flex-direction: column;
+    margin-block: .25em;
+}

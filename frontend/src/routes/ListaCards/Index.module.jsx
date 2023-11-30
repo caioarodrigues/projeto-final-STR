@@ -26,10 +26,12 @@ export default function ListaCards () {
                 plantas.length > 0 ? 
                     plantas.map(({ id, tipo }, key) => {
                         return (
-                            <>
-                                <Card id={id} tipo={tipo} key={key}/>
-                                <CarregaInformacao idRegistro={id}/>
-                            </>
+                            <section className="infos-planta" key={key}>
+                                <div>
+                                    <Card id={id} tipo={tipo} />
+                                    <CarregaInformacao idRegistro={id}/>
+                                </div>
+                            </section>
                         )
                     })
                     : <p>Carregando os dados das plantas...</p>

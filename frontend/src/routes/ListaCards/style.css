@@ -1,0 +1,4 @@
+.infos-planta {
+    display: flex;
+    flex-direction: row;
+}

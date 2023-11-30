@@ -1,5 +1,5 @@
 import Planta from "../models/planta.model";
-import { Request, Response } from "express";
+import { Request, Response, json } from "express";
 
 const plantaModel = Planta.getPlantaModel();
 
