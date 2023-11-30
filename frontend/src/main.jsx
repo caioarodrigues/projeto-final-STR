@@ -2,11 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './routes/Home/Index.module.jsx';
-import ListaCards from './components/ListaCards/Index.module.jsx';
+import ListaCards from './routes/ListaCards/Index.module.jsx';
 import EditaPlanta from './routes/EditaPlanta/Index.module.jsx';
 import ListaRegistros from './components/ListaRegistros/Index.module.jsx';
-import AdicionaPlanta from './components/AdicionaPlanta/Index.module.jsx';
-import RemovePlanta from './components/RemovePlanta/Index.module.jsx';
+import AdicionaPlanta from './routes/AdicionaPlanta/Index.module.jsx';
+import RemovePlanta from './routes/RemovePlanta/Index.module.jsx';
+import CriaRegistro from './routes/CriaRegistro/Index.module.jsx';
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/remove-planta",
     element: <RemovePlanta />
+  },
+  {
+    path: "/cria-registro",
+    element: <CriaRegistro/>
   }
 ]);
 

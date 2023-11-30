@@ -1,7 +1,8 @@
 import "./style.css";
-import Card from "../Card/Index.module";
+import Card from "../../components/Card/Index.module";
 import { useEffect, useState } from "react";
-import CarregaInformacao from "../CarregaInformacao/Index.module";
+import CarregaInformacao from "../../components/CarregaInformacao/Index.module";
+import Header from "../../components/Header/Index.module";
 
 export default function ListaCards () {
     const [plantas, setPlantas] = useState([]);
@@ -20,6 +21,7 @@ export default function ListaCards () {
     
     return (
         <>
+            <Header titulo={"Listagem de todas as plantas"} />
             {
                 plantas.length > 0 ? 
                     plantas.map(({ id, tipo }, key) => {

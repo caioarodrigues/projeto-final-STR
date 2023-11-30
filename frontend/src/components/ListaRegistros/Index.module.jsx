@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Registro from "../../Registro/Index.module";
+import Registro from "../Registro/Index.module";
 import { useParams } from "react-router-dom";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
