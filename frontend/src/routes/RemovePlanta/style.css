@@ -1,0 +1,23 @@
+#plantas { 
+    outline: none;
+    height: 2em;
+}
+
+.form-remover-planta {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    background-color: beige;
+    padding: 2em;
+    width: max-content;
+    border-radius: .25em;
+}
+
+.form-remover-planta > button {
+    height: 2em;
+}
+
+.div-form-remover-planta {
+    display: flex;
+    justify-content: center;
+}

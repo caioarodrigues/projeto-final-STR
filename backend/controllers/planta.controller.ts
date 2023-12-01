@@ -57,6 +57,7 @@ async function listaRegistros (req: Request, res: Response) {
 async function adiciona (req: Request, res: Response) {
     const { tipo } = req.body;
 
+    console.log(tipo)
     try {
         const planta = await plantaModel.adiciona(tipo);
     

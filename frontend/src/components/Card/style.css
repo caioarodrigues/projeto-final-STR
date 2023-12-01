@@ -1,8 +1,21 @@
 .card {
     display: flex;
-    width: 10em;
-    height: 10em;
+    flex-direction: column;
+    width: 12em;
+    height: 12em;
     background-color: bisque;
-    justify-content: center;
-    align-items: center;
+}
+
+.card > h3 {
+    align-self: baseline;
+    justify-self: start;
+    height: 100%;
+    margin-top: .25em;
+    margin-left: .25em;
+}
+
+.card > h2 {
+    text-align: center;
+    align-self: center;
+    height: 100%;
 }

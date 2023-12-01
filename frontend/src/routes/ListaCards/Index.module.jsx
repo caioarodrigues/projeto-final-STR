@@ -22,20 +22,20 @@ export default function ListaCards () {
     return (
         <>
             <Header titulo={"Listagem de todas as plantas"} />
-            {
-                plantas.length > 0 ? 
-                    plantas.map(({ id, tipo }, key) => {
-                        return (
-                            <section className="infos-planta" key={key}>
-                                <div>
-                                    <Card id={id} tipo={tipo} />
-                                    <CarregaInformacao idRegistro={id}/>
-                                </div>
-                            </section>
-                        )
-                    })
-                    : <p>Carregando os dados das plantas...</p>
-            }
+            <section className="infos-planta">
+                {
+                    plantas.length > 0 ? 
+                        plantas.map(({ id, tipo }, key) => {
+                            return (
+                                    <div key={key} className="card-com-link">
+                                        <Card id={id} tipo={tipo} />
+                                        <CarregaInformacao idRegistro={id} />
+                                    </div>
+                            )
+                        })
+                        : <p>Carregando os dados das plantas...</p>
+                }
+            </section>
         </>
     )
 }
