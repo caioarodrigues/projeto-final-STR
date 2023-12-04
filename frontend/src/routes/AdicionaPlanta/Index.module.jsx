@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "../../components/Header/Index.module";
+import axios from "axios";
 import "./style.css";
+import HomeButton from "../../components/HomeButton/Index.module";
 
 export default function AdicionaPlanta () {
     const [tipo, setTipo] = useState('');
@@ -24,14 +26,18 @@ export default function AdicionaPlanta () {
 
                     <button type="submit" onClick={async (e) => {
                         e.preventDefault();
-                        await fetch(url, { method: "POST", 
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }, 
-                            body: { tipo }});
+
+                        await axios.post(url, { tipo: tipo })
+                            .then(({ data }) => {
+                                console.log(`resposta do servidor: ${JSON.stringify(data)}`);
+                            })
+                            .catch(erro => {
+                                console.error(`erro ao fazer a requisição: ${erro}`);
+                            });
                     }}>Adicionar</button>
                 </form>
             </section>
+            <HomeButton />
         </>
     );
 }

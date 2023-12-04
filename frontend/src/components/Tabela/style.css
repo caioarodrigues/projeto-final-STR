@@ -1,0 +1,39 @@
+.thead {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.tbody div {
+    display: flex;
+}
+tr {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.div-tabela {
+    margin: 1em;
+    background-color: beige;
+    width: 40em;
+    padding: .5em;
+    border-radius: .25em;
+}
+
+.tabela {
+    background-color: rgb(226, 226, 205);
+    width: 100%;
+}
+
+.tbody div {
+    border: solid 1px black;
+    margin-block: .25em;
+}
+
+.tbody div:nth-child(odd) {
+    background-color: rgb(247, 247, 226);
+}
+
+.tbody div:hover {
+    background-color: #ccc;
+}

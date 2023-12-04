@@ -1,8 +1,8 @@
 .card {
     display: flex;
     flex-direction: column;
-    width: 12em;
-    height: 12em;
+    width: 13em;
+    height: 13em;
     background-color: bisque;
 }
 

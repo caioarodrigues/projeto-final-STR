@@ -54,7 +54,7 @@ export default class Planta {
     }
     public async registraStatus (planta: PlantaType) {
         const conn = await this._conexao.get();
-        const { id, nivel_agua, luminosidade, umidade } = planta;
+        const { id, quantidade_de_agua: nivel_agua, luminosidade, umidade } = planta;
         const timestamp = Date.now();
         const date = new Date(timestamp);
         const dataFormatada = date.toISOString()

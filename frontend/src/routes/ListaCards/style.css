@@ -1,6 +1,7 @@
 .infos-planta {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .card-com-link {

@@ -3,6 +3,7 @@ import Card from "../../components/Card/Index.module";
 import { useEffect, useState } from "react";
 import CarregaInformacao from "../../components/CarregaInformacao/Index.module";
 import Header from "../../components/Header/Index.module";
+import HomeButton from "../../components/HomeButton/Index.module";
 
 export default function ListaCards () {
     const [plantas, setPlantas] = useState([]);
@@ -24,7 +25,7 @@ export default function ListaCards () {
             <Header titulo={"Listagem de todas as plantas"} />
             <section className="infos-planta">
                 {
-                    plantas.length > 0 ? 
+                    plantas.length > 0 ?
                         plantas.map(({ id, tipo }, key) => {
                             return (
                                     <div key={key} className="card-com-link">
@@ -36,6 +37,8 @@ export default function ListaCards () {
                         : <p>Carregando os dados das plantas...</p>
                 }
             </section>
+
+            <HomeButton />
         </>
     )
 }

@@ -4,7 +4,7 @@ import { UmidadeType } from "./Umidade.type";
 
 export type PlantaType = {
     id: number;
-    nivel_agua: AguaType;
+    quantidade_de_agua: AguaType;
     luminosidade: LuminosidadeType;
     umidade: UmidadeType;
 }

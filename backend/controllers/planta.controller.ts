@@ -23,6 +23,7 @@ async function registraStatus (req: Request, res: Response) {
     const { planta } = req.body;
 
     try {
+        console.log(`planta recebida: ${JSON.stringify(planta)}`);
         await plantaModel.registraStatus(planta);
     }
     catch (err: unknown) {
@@ -57,7 +58,7 @@ async function listaRegistros (req: Request, res: Response) {
 async function adiciona (req: Request, res: Response) {
     const { tipo } = req.body;
 
-    console.log(tipo)
+    //console.log(tipo)
     try {
         const planta = await plantaModel.adiciona(tipo);
     

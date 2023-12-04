@@ -1,37 +1,35 @@
 import { useState, useEffect } from "react";
-import Registro from "../Registro/Index.module";
 import { useParams } from "react-router-dom";
+import Table from "../Tabela/Index.module";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 
 // eslint-disable-next-line react/prop-types
-export default function ListaRegistros () {
+export default function ListaRegistros() {
     const { id } = useParams();
     const url = `http://localhost:3000/api/planta/lista-registros/${id}`;
     const [registros, setRegistros] = useState([]);
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
-        async function carregaRegistros () {
+        async function carregaRegistros() {
             const registros = await fetch(url)
                 .then(res => res.json());
-    
+
             setRegistros(registros);
         }
-    
+
         carregaRegistros();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [registros]);
-    
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <>
             {
-                registros.length > 0 ? 
-                    <ul>{registros.map(({ instante, nome_tabela, valor, planta_id}, key) => 
-                        <Registro instante={instante} nome_tabela={nome_tabela} valor={valor}
-                        planta_id={planta_id} key={key}/>)}
-                    </ul> 
-                    : <p> Carregando registros </p>}
+                registros.length > 0 ? <Table registros={registros} />
+                : <p>Carregando registros</p>
+            }
         </>
     )
+
 }
