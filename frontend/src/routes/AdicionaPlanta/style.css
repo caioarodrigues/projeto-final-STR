@@ -4,8 +4,9 @@
     margin-top: 1em;
     background-color: beige;
     width: max-content;
-    padding: 1em;
+    padding: 2em;
     border-radius: .25em;
+    border: solid 1px black;
 }
 
 .section-form-add-planta {

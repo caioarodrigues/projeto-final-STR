@@ -30,6 +30,7 @@ export default function AdicionaPlanta () {
                         await axios.post(url, { tipo: tipo })
                             .then(({ data }) => {
                                 console.log(`resposta do servidor: ${JSON.stringify(data)}`);
+                                alert("planta adicionada com sucesso!");
                             })
                             .catch(erro => {
                                 console.error(`erro ao fazer a requisição: ${erro}`);

@@ -11,6 +11,7 @@
     padding: 2em;
     width: max-content;
     border-radius: .25em;
+    border: solid 1px black;
 }
 
 .form-remover-planta > button {

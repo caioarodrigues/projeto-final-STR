@@ -3,9 +3,10 @@
     flex-direction: column;
     width: 80vh;
     margin-top: 1em;
-    background-color: palegoldenrod;
+    background-color: beige;
     padding: 2em;
     border-radius: .5em;
+    border: solid 1px black;
 }
 
 .section-form {
@@ -27,6 +28,7 @@
 
 .btn-enviar {
     width: fit-content;
+    padding: .5em;
 }
 
 .div-dados-inseridos {
